@@ -1,8 +1,10 @@
-# IDEA/NAME
+# GifTune
+
+## IDEA/NAME~~~~~
 -music with a gif image to match-
 NAME: GifTune
 
-## TECH
+## TECH~~~~~
 SWIPPER
 Tailwind CSS Framework
 HTML 5
@@ -10,18 +12,23 @@ CSS 3
 Javascript
 JSON for localStorage
 
-## API
+
+## API~~~~~
 -Shazam (https://rapidapi.com/apidojo/api/shazam)
 -GIFPHY (https://developers.giphy.com/)
 
-## DESCRIPTION
+## DESCRIPTION~~~~~
+
 when the user types in the name of a song the song name appears as well as a GIF image closely related to it
 if they search by band name, still come up with a gif image closely related. The music should "syncronize" with the song and more importantly the song title.
 Then the gif image will appear and the song can be *played/stop/pause* with information showing related to the band, genre, year album released,picture of the band(inside information div). 
 Also a "quick search" will be added for old song, genre, or bands that were searched and stored to local Storage.
+
 AND/MAYBE**** song plays? (if we can get that to happen)
 
-## USER STORY
+## USER STORY~~~~~
+
+
 AS A USER I WANT TO type in my favorite song
 and see information about the song and band as well as a GIF image that represents the song title
 AS A USER i will see
@@ -36,7 +43,7 @@ will be INTERACTIVE and clicking an old searched band will then display
 and that click will POP to array for first index as "LAST SEARCHED"
 AS A USER
 
-## ACCEPTANCE CRITERIA
+## ACCEPTANCE CRITERIA~~~~~
 When the user searches for a song
 The appropriate information should be displayed:
 -band Pic
@@ -55,7 +62,9 @@ When a search is made :
 - **have the song playing and being able to pause/stop**
 -clear search bar
 - add last search item to "quick search list"
-## TASKS
+
+## TASKS~~~~~
 TBD After team psuedocodes 4/16
-## WIREFRAME
-https://imgur.com/Mewm8w8
+
+## WIREFRAME~~~~~
+https://excalidraw.com/#json=oHgOe8bD1dQxiggho3-MY,4MCDYALHMOaO4eAsC8cc1w
