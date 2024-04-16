@@ -17,11 +17,11 @@ const spotifyUrl = 'https://spotify23.p.rapidapi.com/search/?q=&type=multi&offse
 const spotifyOptions = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '876e6e0775mshb953066e68a70cbp160a47jsnc895403777bb',
+        'X-RapidAPI-Key': apiKey,
         'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
     }
 };
-const giphyUrl = 'https://api.giphy.com/v1/gifs/search?api_key=OMm5QoLNupS7duNFWG1tVabVcz7RA6qw&q=red+hot+chili+peppers&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips';
+const giphyUrl = 'https://api.giphy.com/v1/gifs/search?api_key=OMm5QoLNupS7duNFWG1tVabVcz7RA6qw&q=&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips';
 
 async function fetchData() {
     try { // Fetch Data from Spotify API
@@ -36,7 +36,7 @@ async function fetchData() {
         console.error('Error Fetching Data:', error);
     }
 }
-
+document.getElementById('search-btn').addEventListener('click', fetchData);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~INVOKES~~~~~//
