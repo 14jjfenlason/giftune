@@ -33,9 +33,33 @@ async function fetchData() {
         const spotifyData = await spotifyResponse.json();
         console.log('Spotify Data:', spotifyData);
 
+        const artistName = spotifyData.artists.items[0].data.profile.name;
+        const artistNameDiv = document.querySelectorAll('.artist-name'); 
+        artistNameDiv.forEach(div => {
+          div.textContent = 'Artist: ' + artistName;
+        });
+        const albumCover = spotifyData.albums.items[0].data.coverArt.sources[0].url;
+        const albumCoverImg = document.createElement('img');
+        albumCoverImg.src = albumCover;
+        const albumCoverDiv = document.querySelector('.album-pic');
+        albumCoverDiv.innerHTML = '';
+        albumCoverDiv.appendChild(albumCoverImg);
+
+        const songName = spotifyData.tracks.items[0].data.name;
+        const songNameDiv = document.querySelector('.song-name');
+        songNameDiv.textContent = 'Song: ' + songName;
+        
         const giphyResponse = await fetch(giphyUrl);
         const giphyData = await giphyResponse.json();
         console.log('Giphy Data:', giphyData);
+
+        const gifImage = giphyData.data[0].images.fixed_height.url;
+        const gifImg = document.createElement('img');
+        gifImg.src = gifImage;
+        const gifImageDiv = document.querySelector('.gif-image');
+        gifImageDiv.innerHTML = '';
+        gifImageDiv.appendChild(gifImg);
+
     } catch (error) {
         console.error('Error Fetching Data:', error);
     }
