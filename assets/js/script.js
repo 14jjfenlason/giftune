@@ -1,7 +1,8 @@
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 //~~~~~GLOBAL VARIABLES~~~~~//
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-const apiKey = '117feb6108mshcdc9fd8d22764abp192b0ajsn3f7f249fdb72';
+const apiKey = 'd875bf90b3msh5322d0212594c58p18188djsnf6a23b67e4d7'
 const inputEl = document.querySelector(`input[type="search"]`);
 const bandDescEl = document.getElementById(`artist-info`);
 const songPlayerEl = document.getElementById(`song-info`);
@@ -11,7 +12,6 @@ const gifEl = document.getElementById(`gif-container`);
 // ~~~~~FUNCTIONS~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-// GET Request
 //Get Request from Spotify API
 // GET Request
 async function fetchData() {
@@ -65,9 +65,64 @@ async function fetchData() {
         console.error('Error Fetching Data:', error);
     }
 }
+
+function updateSearchResults(artist, song, album) {
+    console.log(artist, album, song)
+    // Get the elements by their new IDs
+    const artistNameDisplay = document.getElementById('artist-name');
+    const albumNameDisplay = document.getElementById('album-pic');
+    const songNameDisplay = document.getElementById('song-name');
+
+    // Set the text content
+    if (artistNameDisplay) artistNameDisplay.textContent = `Artist name: ${artist}`;
+    if (albumNameDisplay) albumNameDisplay.innerHTML = `Album: <img src =${album}>`;
+    if (songNameDisplay) songNameDisplay.textContent = `Song: ${song}`;
+}
+//LOCAL STORAGE LOGIC//
+//save search history
+//parse and display searchs from localstorage array
+function saveSearch(searchTerm) {
+    let searches = localStorage.getItem('searches');
+    if (searches) {
+        searches = JSON.parse(searches);
+    } else {
+        searches =[]; 
+    }
+    //Adding search term value to array
+    //then save to localstorage array and update
+    searches.push(searchTerm);
+    localStorage.setItem('searches', JSON.stringify(searches));
+}
+//DISPLAY LOCAL STORAGE LOGIC
+function displaySearches() {
+    let searches = localStorage.getItem('searches');
+    if (searches) {
+        searches = JSON.parse(searches);
+        console.log('searches', searches); // LOG
+    } else {
+        searches = [];
+    }
+// DISPLAY HTML ELEMENTS LOGIC from localstorage
+     const quickSearchContainer = document.querySelector('.quick-search');
+     //CLEAR view first
+     quickSearchContainer.innerHTML = '';
+     const quickSearchEle = `
+     <p class="card-text">${searches}</p>
+     `;
+     quickSearchContainer.innerHTML = quickSearchEle
+     return displaySearches
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~EVENT LISTENER~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+document.getElementById('submit-search-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    const inputValue = document.querySelector('#search-label').value;
+    fetchData();
+    saveSearch(inputValue);
+    displaySearches();
+});
+
 inputEl.addEventListener('keydown', function(event) {
   if (event.keyCode === 13) {
       fetchData();  
@@ -75,11 +130,13 @@ inputEl.addEventListener('keydown', function(event) {
         modalInstance.close();
   }
 });
-document.getElementById('submit-search-btn').addEventListener('click', fetchData);
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~INVOKES~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// ~~~~~ON PAGE LOAD~~~~~ //
 document.addEventListener('DOMContentLoaded', function() {
     const elems = document.querySelectorAll('.modal');
     const instances = M.Modal.init(elems);
-  });
+    displaySearches();
+ });
