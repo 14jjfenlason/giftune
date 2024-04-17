@@ -1,7 +1,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 //~~~~~GLOBAL VARIABLES~~~~~//
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-const apiKey = '876e6e0775mshb953066e68a70cbp160a47jsnc895403777bb';
+const apiKey = '117feb6108mshcdc9fd8d22764abp192b0ajsn3f7f249fdb72';
 const inputEl = document.querySelector(`input[type="search"]`);
 const bandDescEl = document.getElementById(`artist-info`);
 const songPlayerEl = document.getElementById(`song-info`);
@@ -38,6 +38,7 @@ async function fetchData() {
         artistNameDiv.forEach(div => {
           div.textContent = 'Artist: ' + artistName;
         });
+
         const albumCover = spotifyData.albums.items[0].data.coverArt.sources[0].url;
         const albumCoverImg = document.createElement('img');
         albumCoverImg.src = albumCover;
@@ -67,8 +68,14 @@ async function fetchData() {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~EVENT LISTENER~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+inputEl.addEventListener('keydown', function(event) {
+  if (event.keyCode === 13) {
+      fetchData();  
+      const modalInstance = M.Modal.getInstance(document.querySelector('.modal'));
+        modalInstance.close();
+  }
+});
 document.getElementById('submit-search-btn').addEventListener('click', fetchData);
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~INVOKES~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
