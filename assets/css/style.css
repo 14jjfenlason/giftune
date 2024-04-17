@@ -1,0 +1,10 @@
+.head-border{
+    width: 98vw;
+    height: 20px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0));
+    margin-bottom: 30px;
+}
+.mb-10 {
+    margin-bottom: 10px !important; 
+    /* sets margin on search button in modal */
+}
