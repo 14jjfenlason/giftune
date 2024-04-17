@@ -36,7 +36,7 @@ async function fetchData() {
         console.error('Error Fetching Data:', error);
     }
 }
-document.getElementById('search-btn').addEventListener('click', fetchData);
+document.getElementById('search-label').addEventListener('click', fetchData);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~INVOKES~~~~~//
