@@ -2,7 +2,7 @@
 //~~~~~GLOBAL VARIABLES~~~~~//
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 const apiKey = '876e6e0775mshb953066e68a70cbp160a47jsnc895403777bb';
-const input = document.querySelector(`artist-search-label`);
+const inputValue = document.querySelector(`input[type="search"]`);
 const bandDescEl = document.getElementById(`artist-info`);
 const songPlayerEl = document.getElementById(`song-info`);
 const gifEl = document.getElementById(`gif-container`);
@@ -13,7 +13,7 @@ const gifEl = document.getElementById(`gif-container`);
 
 // GET Request
 //Get Request from Spotify API
-const spotifyUrl = `https://spotify23.p.rapidapi.com/search/?q=${input}&type=multi&offset=0&limit=10&numberOfTopResults=5`;
+const spotifyUrl = `https://spotify23.p.rapidapi.com/search/?q=${encodeURIComponent(inputValue)}&type=multi&offset=0&limit=10&numberOfTopResults=5`;
 const spotifyOptions = {
     method: 'GET',
     headers: {
@@ -21,7 +21,7 @@ const spotifyOptions = {
         'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
     }
 };
-const giphyUrl = `https://api.giphy.com/v1/gifs/search?api_key=OMm5QoLNupS7duNFWG1tVabVcz7RA6qw&q=${input}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`;
+const giphyUrl = `https://api.giphy.com/v1/gifs/search?api_key=OMm5QoLNupS7duNFWG1tVabVcz7RA6qw&q=${encodeURIComponent(inputValue)}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`;
 
 async function fetchData() {
     try { // Fetch Data from Giphy API
@@ -36,7 +36,7 @@ async function fetchData() {
         console.error('Error Fetching Data:', error);
     }
 }
-document.getElementById('search-label').addEventListener('click', fetchData);
+document.getElementById('submit-search-btn').addEventListener('click', fetchData);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~INVOKES~~~~~//
