@@ -11,7 +11,7 @@ const gifEl = document.getElementById(`gif-container`);
 // ~~~~~FUNCTIONS~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-// GET Request
+
 //Get Request from Spotify API
 // GET Request
 async function fetchData() {
@@ -39,6 +39,32 @@ async function fetchData() {
     } catch (error) {
         console.error('Error Fetching Data:', error);
     }
+}
+//LOCAL STORAGE LOGIC//
+//save search history
+//parse and display searchs from localstorage array
+function saveSearch(searchTerm) {
+    let searches = localStorage.getItem('searches');
+    if (searches) {
+        searches = JSON.parse(searches);
+    } else {
+        searches =[]; 
+    }
+    //Adding search term value to array
+    //then save to localstorage array and update
+    searches.push(searchTerm);
+    localStorage.setIteme('searches', JSON.stringify(searches));
+}
+//DISPLAY LOCAL STORAGE LOGIC
+function displaySearches() {
+    let searches = localStorage.getItem('searches');
+    if (searches) {
+        searches = JSON.parse(searches);
+    } else {
+        searches = [];
+    }
+// DISPLAY HTML ELEMENTS LOGIC from localstorage
+       
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~EVENT LISTENER~~~~~//
