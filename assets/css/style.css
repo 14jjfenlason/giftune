@@ -1,10 +1,53 @@
+body{
+    background-color: rgb(196, 187, 187);
+}
+
 .head-border{
     width: 98vw;
     height: 20px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0) 20%, black 80%, rgba(0, 0, 0, 0));
     margin-bottom: 30px;
-}
+} 
 .mb-10 {
     margin-bottom: 10px !important; 
     /* sets margin on search button in modal */
 }
+
+/* differnt line heights to show diff size box*/
+.row > .artist-info{
+    padding: 10px;
+    background-color: #ddd;
+    border: 1px solid #fff;
+    line-height: 120px;
+}
+
+.row > .song-info {
+    padding: 10px;
+    background-color: #ddd;
+    border: 1px solid #fff;
+    line-height: 45px;
+}
+.row > footer {
+    padding: 10px;
+    background-color: #ddd;
+    border: 1px solid #fff;
+    line-height: 60px;
+    text-align: center;
+}
+
+.row > .quick-search{
+    padding: 10px;
+    background-color: #ddd;
+    border: 1px solid #fff;
+    line-height: 100px;
+
+}
+
+.row> .gif-container{
+    padding: 10px;
+    background-color: #ddd;
+    border: 1px solid #fff;
+    line-height: 165px;
+    
+}
+
