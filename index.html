@@ -17,7 +17,7 @@
     <!-- Modal Structure -->
     <div class="container">
         <div class="row">
-          <div class="col s12 right-align">
+          <div class="col s12 right-align"> <!--change color of button based on color scheme-->
             <a class="waves-effect waves-light btn modal-trigger" id="search-btn" href="#modal1">Search for an Artist/Song</a>
           </div>
         </div>
@@ -26,23 +26,58 @@
         <div class="modal-content">
             <h4 class="center-align">Search Here</h4>
             <div class="input-field artist-search">
-                <input type="search" id="search-label" placeholder="Please enter an artist's name here">
-                <label for="artist-search-label">Search for an artist:</label>
-                <button class="waves-effect waves-light btn modal-close mb-10" id="submit-search-btn">Search</button>
+
+                <input type="text" id="search-label" placeholder="Please enter an artist's name or song name here">
+                <label for="artist-search-label">Search for an artist/song:</label>
+                <button class="waves-effect waves-light btn modal-close mb-10">Search</button>
+
             </div>
         </div>
     </div>
-    <section class="artist-info">
-        <div class="artist-name" id="artist-name">Artist name: </div>
-        <div class="album-pic" id="album-pic">Album: </div>
+
+    <div class="container">
+        <div class="row">
+    
+            <div class="artist-info col s12 m5 l4 z-depth-4">
+                <div class="artist-name" id="artist-name">Artist name: </div>
+                <div class="album-pic" id="album-pic">Album: </div>
+            </div>
+            <div class="song-info col s12 m7 l8 z-depth-4" >
+                <div class="song-name">Song: </div>
+                <div class="artist-name" id="song-name">By: </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container"> 
+     <div class="row"> 
+            <div class="quick-search col s12 m5 l4 z-depth-4">*old searches here*</div>
+                <div class="gif-container col s12 m7 l8 z-depth-4">
+                <div class="gif-image">*gif image here*</div>
+                </div>
+     </div>
+    </div>
+
+    <div class="container"> 
+    <div class="row"> 
+    <footer class="footer col s12 z-depth-4">Thanks for using the app!</footer>
+    </div>
+    </div>
+
+    <!--<section class="artist-info">
+        <div class="artist-name">Artist name: </div>
+        <div class="album-pic">Album: </div>
     </section>
     <section class="song-info">
-        <div class="song-name" id="song-name">Song: </div>
+        <div class="song-name">Song: </div>
         <div class="artist-name">By: </div>
     </section>
     <section class="gif-container">
         <div class="gif-image">*gif image here*</div>
     </section>
+    <section class="quick-search">*old searches here*</section>
+    </section>-->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
