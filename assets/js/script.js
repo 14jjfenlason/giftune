@@ -53,28 +53,44 @@ function saveSearch(searchTerm) {
     //Adding search term value to array
     //then save to localstorage array and update
     searches.push(searchTerm);
-    localStorage.setIteme('searches', JSON.stringify(searches));
+    localStorage.setItem('searches', JSON.stringify(searches));
 }
 //DISPLAY LOCAL STORAGE LOGIC
 function displaySearches() {
     let searches = localStorage.getItem('searches');
     if (searches) {
         searches = JSON.parse(searches);
+        console.log('searches', searches); // LOG
     } else {
         searches = [];
     }
 // DISPLAY HTML ELEMENTS LOGIC from localstorage
-       
+     const quickSearchContainer = document.querySelector('.quick-search');
+     //CLEAR view first
+     quickSearchContainer.innerHTML = '';
+     const quickSearchEle = `
+     <p class="card-text">${searches}</p>
+     `;
+     quickSearchContainer.innerHTML = quickSearchEle
+     return displaySearches
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~EVENT LISTENER~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-document.getElementById('submit-search-btn').addEventListener('click', fetchData);
+document.getElementById('submit-search-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    const inputValue = document.querySelector('#search-label').value;
+    fetchData();
+    saveSearch(inputValue);
+    displaySearches();
+});
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~INVOKES~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// ~~~~~ON PAGE LOAD~~~~~ //
 document.addEventListener('DOMContentLoaded', function() {
     const elems = document.querySelectorAll('.modal');
     const instances = M.Modal.init(elems);
+    displaySearches();
   });
