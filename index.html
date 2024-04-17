@@ -5,39 +5,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>GifTune</title>
 </head>
 <body>
     <header class="header-container">
-        <h1>GifTune</h1>
+        <h1 class="center-align">GifTune</h1>
+        <div class="head-border"></div>
     </header>
+    <!-- Modal Structure -->
+    <div class="container">
+        <div class="row">
+          <div class="col s12 right-align">
+            <a class="waves-effect waves-light btn modal-trigger" id="search-btn" href="#modal1">Search for an Artist/Song</a>
+          </div>
+        </div>
+      </div>    
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4 class="center-align">Search Here</h4>
+            <div class="input-field artist-search">
+                <input type="text" id="artist-search-label" placeholder="Please enter an artist's name here">
+                <label for="artist-search-label">Search for an artist:</label>
+                <button class="waves-effect waves-light btn modal-close mb-10">Search</button>
+            </div>
+            <div class="input-field song-search">
+                <input type="text" id="song-search-label" placeholder="Please enter a song here">
+                <label for="song-search-label">Search for a song:</label>
+                <button class="waves-effect waves-light btn modal-close">Search</button>
+            </div>
+        </div>
+    </div>
     <section class="artist-info">
         <div class="artist-name">Artist name: </div>
         <div class="album-pic">Album: </div>
     </section>
-    <section class="search=button">
-        <button id="search-btn" class="btn">Search for Artist/Song</button>
-    </section>
-    <div class="modal">
-        <div class="modal-body">
-          <form>
-                  <div class="artist-search">
-                      <label for="artist-search-label">Search for Artist: </label>
-                      <input type="text" id="artist-search-label">
-                  </div>
-                  <div class="song-search">
-                      <label for="song-search-label">Search for Song: </label>
-                      <input type="text"  id="song-search-label">
-                  </div>
-                </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="add-task-btn">Add Task</button>
-        </div>
-      </div>
     <section class="song-info">
         <div class="song-name">Song: </div>
         <div class="artist-name">By: </div>
@@ -47,6 +50,6 @@
     </section>
     <section class="quick-search">*old searches here*</section>
     <footer class="footer">Thanks for using the app!</footer>
-    
-    <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
