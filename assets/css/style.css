@@ -39,17 +39,18 @@ body{
     padding: 10px;
     background-color: #ddd;
     border: 1px solid #fff;
-    line-height: 166px;
-    margin-top: -208px;
-
+    line-height: 172px;
+    margin-top: -214px;
 }
+
+
 
 .row> .gif-container{
     padding: 10px;
     background-color: #ddd;
     border: 1px solid #fff;
     line-height: 322px;
-    margin-top: 14px;
+    margin-top: 13px;
     
     
 }
