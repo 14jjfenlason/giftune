@@ -1,7 +1,8 @@
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 //~~~~~GLOBAL VARIABLES~~~~~//
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-const apiKey = '117feb6108mshcdc9fd8d22764abp192b0ajsn3f7f249fdb72';
+const apiKey = 'd875bf90b3msh5322d0212594c58p18188djsnf6a23b67e4d7'
 const inputEl = document.querySelector(`input[type="search"]`);
 const bandDescEl = document.getElementById(`artist-info`);
 const songPlayerEl = document.getElementById(`song-info`);
@@ -10,7 +11,6 @@ const gifEl = document.getElementById(`gif-container`);
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~FUNCTIONS~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-
 
 //Get Request from Spotify API
 // GET Request
@@ -64,6 +64,19 @@ async function fetchData() {
     } catch (error) {
         console.error('Error Fetching Data:', error);
     }
+}
+
+function updateSearchResults(artist, song, album) {
+    console.log(artist, album, song)
+    // Get the elements by their new IDs
+    const artistNameDisplay = document.getElementById('artist-name');
+    const albumNameDisplay = document.getElementById('album-pic');
+    const songNameDisplay = document.getElementById('song-name');
+
+    // Set the text content
+    if (artistNameDisplay) artistNameDisplay.textContent = `Artist name: ${artist}`;
+    if (albumNameDisplay) albumNameDisplay.innerHTML = `Album: <img src =${album}>`;
+    if (songNameDisplay) songNameDisplay.textContent = `Song: ${song}`;
 }
 //LOCAL STORAGE LOGIC//
 //save search history
@@ -126,4 +139,4 @@ document.addEventListener('DOMContentLoaded', function() {
     const elems = document.querySelectorAll('.modal');
     const instances = M.Modal.init(elems);
     displaySearches();
-  });
+ });
