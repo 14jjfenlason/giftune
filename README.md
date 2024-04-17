@@ -6,7 +6,7 @@ NAME: GifTune
 
 ## TECH~~~~~
 SWIPPER
-Tailwind CSS Framework
+Materialize CSS Framework
 HTML 5
 CSS 3
 Javascript
