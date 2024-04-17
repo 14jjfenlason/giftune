@@ -115,7 +115,7 @@ function displaySearches() {
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 // ~~~~~EVENT LISTENER~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-document.getElementById('submit-search-btn').addEventListener('click', function(event) {
+document.getElementById('modal1').addEventListener('click', function(event) {
     event.preventDefault();
     const inputValue = document.querySelector('#search-label').value;
     fetchData();
