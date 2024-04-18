@@ -1,71 +1,91 @@
 # GifTune
 
-## IDEA/NAME~~~~~
--music with a gif image to match-
-NAME: GifTune
+## Description
+GifTune is a web application that allows users to search for music artists or songs and receive detailed information alongside related gifs. Utilizing the Spotify and Giphy APIs, it provides a dynamic and interactive way to explore music and visual content. Built with HTML, CSS, and JavaScript, GifTune leverages Materialize CSS for responsive design elements to enhance user experience on various devices.
 
-## TECH~~~~~
-SWIPPER
-Materialize CSS Framework
-HTML 5
-CSS 3
-Javascript
-JSON for localStorage
+## Installation
+To run GifTune locally, follow these simple steps:
+
+1. **Clone the repository:**
+    ```bash/git bash
+    git clone https://github.com/14jjfenlason/giftune.git
+    ```
+
+2. **Navigate to the project directory:**
+    ```bash/git bash
+    cd giftune
+    ```
+
+3. **Open the `index.html` file in your web browser.**
+
+No need to install additional dependencies, as the project uses CDN links for all external libraries including Materialize CSS, jQuery, and others.
+
+## Usage
+Open `index.html` in your browser. Utilize the search modal to enter an artist's name or song title. The application will fetch and display artist and song information, album art, and a corresponding gif from Giphy related to the search query.
+
+## Features
+- **Music and Gif Search**: Leverages the Spotify API for music data and the Giphy API for gif images.
+- **Responsive Design**: Uses Materialize CSS for a layout that adjusts to desktops, tablets, and mobiles.
+- **Local Storage**: Implements local storage to save and display the history of user searches, enhancing user experience by providing quick access to previous searches.
+
+## Team
+
+GifTune is developed by a team of student developers from UTA Bootcamp. As part of our learning journey, we have come together to create this application, which demonstrates our collective skills in web development and our passion for music and technology.
+
+### Our Developers:
+- **Jewel Sunny** - Specializes in frontend development, focusing on UI/UX enhancements using Materialize CSS.
+- **Joshua Fenlason** - Handles backend development, ensuring robust API integration and server-side functionality.
+- **Max Bonetti** - A full stack developer who ensures that the frontend and backend of the application work seamlessly together.
+- **Franc Garcia** - Focuses on quality assurance, responsible for testing and providing critical feedback to improve application reliability and user experience.
+
+## Contributing
+
+We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
+
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+
+We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
+
+### How to Contribute:
+1. **Fork the repo** and create your branch from `main`.
+2. **Clone the repository** to your own machine (same step as installation process)
+3. **Switch to the directory** of the cloned repository:
+    ```bash/git bash
+    cd giftune
+    ```
+4. **Create a new branch**:
+    ```bash/git bash
+    git checkout -b name-your-feature
+    ```
+5. **Make your changes** and commit them:
+    ```bash/git bash
+    git commit -m 'Add some feature'
+    ```
+6. **Push your branch** to GitHub:
+    ```bash/git bash
+    git push origin name-your-feature 
+    ```
+7. **Open a Pull Request** on GitHub and provide a description of the proposed changes.
+
+Please ensure your commit messages clearly explain the purpose of your changes. This helps maintainers understand your suggestions and make it easier to integrate them.
+
+### Pull Request Process
+1. Ensure any install or build dependencies are removed before the end of the layer when doing a build.
+2. Update the README.md with details of changes to the interface, this includes new environment variables, exposed ports, useful file locations, and container parameters.
+3. Increase the version numbers in any examples files and the README.md to the new version that this Pull Request would represent.
+4. The pull request will be merged once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+
+## Code of Conduct
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
 
 
-## APIs~~~~~
--Spotify (RapidAPI) (https://rapidapi.com/Glavier/api/spotify23)
--GIPHY (https://developers.giphy.com/)
+## License
+This project is released under the MIT License. See the LICENSE file in the project repository for more details.
 
-## DESCRIPTION~~~~~
-
-when the user types in the name of a song the song name appears as well as a GIF image closely related to it
-if they search by band name, still come up with a gif image closely related. The music should "syncronize" with the song and more importantly the song title.
-Then the gif image will appear and the song can be *played/stop/pause* with information showing related to the band, genre, year album released,picture of the band(inside information div). 
-Also a "quick search" will be added for old song, genre, or bands that were searched and stored to local Storage.
-
-## USER STORY~~~~~
-
-
-AS A USER I WANT TO type in my favorite song
-and see information about the song and band as well as a GIF image that represents the song title
-AS A USER i will see
-band name, genre, year song came out, song title, gif image that represents song title, list of old searches
-AS A USER i can search by
-genre, band name, song title
-AS A USER i will see my old searches
-with an avatar of the ALBUM, band NAME, GENRE ,and song TITLE (in list format for old searches)
-AS A USER the old search 
-will be INTERACTIVE and clicking an old searched band will then display
------ as it should on a regular search -----
-and that click will POP to array for first index as "LAST SEARCHED"
-AS A USER
-
-## ACCEPTANCE CRITERIA~~~~~
-When the user searches for a song
-The appropriate information should be displayed:
--band ic
--band name
--song title
--album year
--album art
-When an quick search is added it will appear as:
--album art display
--band name
--song name
---IN LIST FORMAT with Materialize CSS--
-When a search is made :
--Display a GIF closely matching the song title
-- display the song title and band name below the GIF
-- **have the song playing and being able to pause/stop**
--clear search bar
-- add last search item to "quick search list"
-
-## WIREFRAME~~~~~
-https://excalidraw.com/#json=oHgOe8bD1dQxiggho3-MY,4MCDYALHMOaO4eAsC8cc1w
-
-## RESOURCES~~~~~
-Spotify API by Glavier. https://rapidapi.com/Glavier/api/spotify23
-Giphy API by Giphy. https://rapidapi.com/giphy/api/giphy
-jQuery: https://jquery.com/
-Materialize CSS: https://materializecss.com/
+## Acknowledgments
+- **Spotify API**: For providing a robust API to access music data.
+- **Giphy API**: For making it easier to add fun and relevant visual content.
+- **Materialize CSS**: For their responsive frontend framework that greatly enhances the UI/UX.
