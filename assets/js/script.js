@@ -71,9 +71,15 @@ async function fetchData() {
 //LOCAL STORAGE LOGIC//
 function saveSearch(searchTerm) {
     let searches = localStorage.getItem('searches');
-    searches = searches ? JSON.parse(searches) : []; // Retrieve existing searches or initialize an empty array if no searches exist
-    searches.push(searchTerm.toLowerCase().trim()); // Add the new search term to the array
-    localStorage.setItem('searches', JSON.stringify(searches)); // Save the updated array back to local storage
+
+    searches = searches ? JSON.parse(searches) : [];
+    searchTerm = searchTerm.toLowerCase().trim();
+
+    // Check if the searchTerm is not already in the array to prevent duplicates
+    if (!searches.includes(searchTerm)) {
+        searches.push(searchTerm);
+        localStorage.setItem('searches', JSON.stringify(searches));
+    }
 }
 
 //DISPLAY LOCAL STORAGE LOGIC
@@ -81,16 +87,18 @@ function displaySearches() {
     let searches = localStorage.getItem('searches');
     searches = searches ? JSON.parse(searches) : [];
     const quickSearchContainer = document.querySelector('.quick-search');
-    quickSearchContainer.innerHTML = '';
+    // Display only the most recent search term (the last one in the array)
+    const mostRecentSearch = searches[searches.length - 1];
+    quickSearchContainer.innerHTML = mostRecentSearch ? `<p class="card-text">${mostRecentSearch}</p>` : '';
     searches.forEach(search => {
-        const searchItem = document.createElement('p');
-        searchItem.classList.add('card-text');
-        searchItem.textContent = search;
-        quickSearchContainer.appendChild(searchItem);
-        
-        searchItem.addEventListener('click', function() {
-            reExecuteSearch(search);
+        const searchElement = document.createElement('p');
+        searchElement.className = 'card-text';
+        searchElement.textContent = search;
+        searchElement.addEventListener('click', () => {
+            document.getElementById('search-label').value = search;
+            fetchData();  // Execute the search again without saving
         });
+        quickSearchContainer.appendChild(searchElement);
     });
 }
 

@@ -1,5 +1,33 @@
+/* FONTS */
+.fira-mono-regular {
+    font-family: "Fira Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .fira-mono-medium {
+    font-family: "Fira Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .fira-mono-bold {
+    font-family: "Fira Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+  }
+
 body{
     background-color: rgb(224, 215, 215);
+    font-family: "Fira Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+header {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .head-border{
