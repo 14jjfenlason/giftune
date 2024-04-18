@@ -57,6 +57,8 @@ async function fetchData() {
         const gifImg = document.createElement('img');
         gifImg.src = gifImage;
         const gifImageDiv = document.querySelector('.gif-image');
+//style.backgroundImage was added to fill thhe gif container with the gif//
+        gifImageDiv.style.backgroundImage= `url(${gifImage})`;
         gifImageDiv.innerHTML = '';
         gifImageDiv.appendChild(gifImg);
 
@@ -156,3 +158,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Do NOT call ; to avoid displaying the search history on page load? or we do want that?
     
 });
+
