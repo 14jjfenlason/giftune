@@ -57,7 +57,6 @@ async function fetchData() {
         gifImg.src = gifImage;
         const gifImageDiv = document.querySelector('.gif-image');
 //style.backgroundImage was added to fill thhe gif container with the gif//
-        gifImageDiv.style.backgroundImage= `url(${gifImage})`;
         gifImageDiv.innerHTML = '';
         gifImageDiv.appendChild(gifImg);
 
