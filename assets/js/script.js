@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fetchData();  // Fetch data when pressing Enter in the input field
             const modalInstance = M.Modal.getInstance(document.querySelector('.modal'));
             modalInstance.close();
+           // displaySearches()
         }
     });
 });
