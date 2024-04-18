@@ -38,8 +38,11 @@
         <div class="row">
     
             <div class="artist-info col s12 m5 l4 z-depth-4">
-                <div class="artist-name">Artist name: </div>
-                <div class="album-pic">Album: </div>
+                <!--changed class name to have 1 bc two of the same classes??-->
+                <!--Made changes to the order ofa artist info children and added class of album-title and made album-pic its own dic-->
+                <div class="artist-name-1">Artist name: </div>
+                <div class="album-title">Album: </div>
+                <div class="album-pic"></div>
             </div>
             <div class="song-info col s12 m7 l8 z-depth-4" >
                 <div class="song-name">Song: </div>
@@ -53,7 +56,7 @@
     
     <div class="container"> 
      <div class="row"> 
-            <div class="quick-search col s12 m5 l4 z-depth-4">*old searches here*</div>
+            <div class="quick-search col s12 m5 l12 z-depth-4">*old searches here*</div>
                 
      </div>
     </div>
@@ -69,5 +72,9 @@
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@alec.brunelle/darkmode-js@1.5.0/lib/darkmode-js.min.js"></script>
+  <script>
+    new Darkmode().showWidget();
+  </script>
     
 </body>
