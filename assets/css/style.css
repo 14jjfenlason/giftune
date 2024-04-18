@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(196, 187, 187);
+    background-color: rgb(224, 215, 215);
 }
 
 .head-border{
@@ -39,15 +39,19 @@ body{
     padding: 10px;
     background-color: #ddd;
     border: 1px solid #fff;
-    line-height: 100px;
-
+    line-height: 172px;
+    margin-top: -214px;
 }
+
+
 
 .row> .gif-container{
     padding: 10px;
     background-color: #ddd;
     border: 1px solid #fff;
-    line-height: 165px;
+    line-height: 322px;
+    margin-top: 13px;
+    
     
 }
 
