@@ -11,7 +11,6 @@ const gifEl = document.getElementById(`gif-container`);
 // ~~~~~FUNCTIONS~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-
 //Get Request from Spotify API
 async function fetchData() {
     // Retrieve the current value of the input field
@@ -58,7 +57,6 @@ async function fetchData() {
         gifImg.src = gifImage;
         const gifImageDiv = document.querySelector('.gif-image');
 //style.backgroundImage was added to fill thhe gif container with the gif//
-        gifImageDiv.style.backgroundImage= `url(${gifImage})`;
         gifImageDiv.innerHTML = '';
         gifImageDiv.appendChild(gifImg);
 
@@ -71,23 +69,17 @@ async function fetchData() {
 }
 //LOCAL STORAGE LOGIC//
 function saveSearch(searchTerm) {
-    // Only store the most recent searchTerm, overwrite any existing data
-    let searches = [searchTerm.toLowerCase().trim()];
-    localStorage.setItem('searches', JSON.stringify(searches));
+    let searches = localStorage.getItem('searches');
+
+    searches = searches ? JSON.parse(searches) : [];
+    searchTerm = searchTerm.toLowerCase().trim();
+
+    // Check if the searchTerm is not already in the array to prevent duplicates
+    if (!searches.includes(searchTerm)) {
+        searches.push(searchTerm);
+        localStorage.setItem('searches', JSON.stringify(searches));
+    }
 }
-
-    //if (searches) {
-       // searches = JSON.parse(searches);
-   // } else {
-    //searches =[]; 
-   // }
-    //Adding search term value to array
-    //then save to localstorage array and update
-   // searches.push(searchTerm);
-
-
-    //localStorage.setItem('searches', JSON.stringify(searches));
-    //console.log(searchTerm)
 
 //DISPLAY LOCAL STORAGE LOGIC
 function displaySearches() {
@@ -97,32 +89,22 @@ function displaySearches() {
     // Display only the most recent search term (the last one in the array)
     const mostRecentSearch = searches[searches.length - 1];
     quickSearchContainer.innerHTML = mostRecentSearch ? `<p class="card-text">${mostRecentSearch}</p>` : '';
+    searches.forEach(search => {
+        const searchElement = document.createElement('p');
+        searchElement.className = 'card-text';
+        searchElement.textContent = search;
+        searchElement.addEventListener('click', () => {
+            document.getElementById('search-label').value = search;
+            fetchData();  // Execute the search again without saving
+        });
+        quickSearchContainer.appendChild(searchElement);
+    });
 }
-
-
 
 function reExecuteSearch(searchTerm) {
     document.getElementById('search-label').value = searchTerm;
     fetchData();
-
-
 }
-    //if (searches) {
-       // searches = JSON.parse(searches);
-        //console.log('searches', searches); // LOG
-   // } else {
-   //     searches = [];
-   // }
-// DISPLAY HTML ELEMENTS LOGIC from localstorage
-     //const quickSearchContainer = document.querySelector('.quick-search');
-     //CLEAR view first
-    // quickSearchContainer.innerHTML = '';
-     //const quickSearchEle = `
-    // <p class="card-text">${searches}</p>
-    // `;
-     //quickSearchContainer.innerHTML = quickSearchEle
-    // return displaySearches
-//}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initializes modals using Materialize
@@ -133,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchBtn = document.getElementById('search-btn');
     searchBtn.addEventListener('click', function() {
         const modalInstance = M.Modal.getInstance(document.querySelector('.modal'));
-        modalInstance.open();
+        modalInstance.open();   
     });
 
     // Sets up the event listener for the button inside the modal to fetch data and close the modal
@@ -154,8 +136,4 @@ document.addEventListener('DOMContentLoaded', function() {
            // displaySearches()
         }
     });
-
-    // Do NOT call ; to avoid displaying the search history on page load? or we do want that?
-    
 });
-
