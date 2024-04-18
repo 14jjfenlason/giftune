@@ -11,7 +11,6 @@ const gifEl = document.getElementById(`gif-container`);
 // ~~~~~FUNCTIONS~~~~~//
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-
 //Get Request from Spotify API
 async function fetchData() {
     // Retrieve the current value of the input field
@@ -71,6 +70,7 @@ async function fetchData() {
 //LOCAL STORAGE LOGIC//
 function saveSearch(searchTerm) {
     let searches = localStorage.getItem('searches');
+
     searches = searches ? JSON.parse(searches) : [];
     searchTerm = searchTerm.toLowerCase().trim();
 
@@ -80,19 +80,6 @@ function saveSearch(searchTerm) {
         localStorage.setItem('searches', JSON.stringify(searches));
     }
 }
-
-    //if (searches) {
-       // searches = JSON.parse(searches);
-   // } else {
-    //searches =[]; 
-   // }
-    //Adding search term value to array
-    //then save to localstorage array and update
-   // searches.push(searchTerm);
-
-
-    //localStorage.setItem('searches', JSON.stringify(searches));
-    //console.log(searchTerm)
 
 //DISPLAY LOCAL STORAGE LOGIC
 function displaySearches() {
@@ -114,30 +101,10 @@ function displaySearches() {
     });
 }
 
-
-
 function reExecuteSearch(searchTerm) {
     document.getElementById('search-label').value = searchTerm;
     fetchData();
-
-
 }
-    //if (searches) {
-       // searches = JSON.parse(searches);
-        //console.log('searches', searches); // LOG
-   // } else {
-   //     searches = [];
-   // }
-// DISPLAY HTML ELEMENTS LOGIC from localstorage
-     //const quickSearchContainer = document.querySelector('.quick-search');
-     //CLEAR view first
-    // quickSearchContainer.innerHTML = '';
-     //const quickSearchEle = `
-    // <p class="card-text">${searches}</p>
-    // `;
-     //quickSearchContainer.innerHTML = quickSearchEle
-    // return displaySearches
-//}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initializes modals using Materialize
@@ -148,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchBtn = document.getElementById('search-btn');
     searchBtn.addEventListener('click', function() {
         const modalInstance = M.Modal.getInstance(document.querySelector('.modal'));
-        modalInstance.open();
+        modalInstance.open();   
     });
 
     // Sets up the event listener for the button inside the modal to fetch data and close the modal
@@ -168,7 +135,4 @@ document.addEventListener('DOMContentLoaded', function() {
             modalInstance.close();
         }
     });
-
-    // Do NOT call displaySearches(); to avoid displaying the search history on page load? or we do want that?
 });
-

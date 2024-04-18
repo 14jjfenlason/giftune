@@ -45,16 +45,12 @@ body{
     padding: 10px;
     background-color: #ddd;
     /*border: 1px solid #fff;*/
-    line-height: 172px;
     margin-top: 20px;
 }
 
 .quick-search{
-    
     margin-top: 20px;
 }
-
-
 
 .row> .gif-container{
     padding: 10px;
@@ -83,7 +79,6 @@ body{
     align-items: center;
     justify-content: center;
     height: 423px; /*Adjusted the height to be the same as gif container!!*/
-  
    
 }
 
@@ -108,12 +103,3 @@ body{
     
    
 }
-
-
-
-
-
-
-
-
-
