@@ -71,9 +71,15 @@ async function fetchData() {
 }
 //LOCAL STORAGE LOGIC//
 function saveSearch(searchTerm) {
-    // Only store the most recent searchTerm, overwrite any existing data
-    let searches = [searchTerm.toLowerCase().trim()];
-    localStorage.setItem('searches', JSON.stringify(searches));
+    let searches = localStorage.getItem('searches');
+    searches = searches ? JSON.parse(searches) : [];
+    searchTerm = searchTerm.toLowerCase().trim();
+
+    // Check if the searchTerm is not already in the array to prevent duplicates
+    if (!searches.includes(searchTerm)) {
+        searches.push(searchTerm);
+        localStorage.setItem('searches', JSON.stringify(searches));
+    }
 }
 
     //if (searches) {
@@ -97,6 +103,16 @@ function displaySearches() {
     // Display only the most recent search term (the last one in the array)
     const mostRecentSearch = searches[searches.length - 1];
     quickSearchContainer.innerHTML = mostRecentSearch ? `<p class="card-text">${mostRecentSearch}</p>` : '';
+    searches.forEach(search => {
+        const searchElement = document.createElement('p');
+        searchElement.className = 'card-text';
+        searchElement.textContent = search;
+        searchElement.addEventListener('click', () => {
+            document.getElementById('search-label').value = search;
+            fetchData();  // Execute the search again without saving
+        });
+        quickSearchContainer.appendChild(searchElement);
+    });
 }
 
 
