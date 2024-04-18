@@ -33,8 +33,8 @@ Open `index.html` in your browser. Utilize the search modal to enter an artist's
 GifTune is developed by a team of student developers from UTA Bootcamp. As part of our learning journey, we have come together to create this application, which demonstrates our collective skills in web development and our passion for music and technology.
 
 ### Our Developers:
-- **Sunny Jewel** - Specializes in frontend development, focusing on UI/UX enhancements using Materialize CSS.
-- **Fenlasson Joshua** - Handles backend development, ensuring robust API integration and server-side functionality.
+- **Jewel Sunny** - Specializes in frontend development, focusing on UI/UX enhancements using Materialize CSS.
+- **Joshua Fenlason** - Handles backend development, ensuring robust API integration and server-side functionality.
 - **Max Bonetti** - A full stack developer who ensures that the frontend and backend of the application work seamlessly together.
 - **Franc Garcia** - Focuses on quality assurance, responsible for testing and providing critical feedback to improve application reliability and user experience.
 
