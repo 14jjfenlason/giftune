@@ -149,8 +149,10 @@ document.addEventListener('DOMContentLoaded', function() {
             fetchData();  // Fetch data when pressing Enter in the input field
             const modalInstance = M.Modal.getInstance(document.querySelector('.modal'));
             modalInstance.close();
+           // displaySearches()
         }
     });
 
-    // Do NOT call displaySearches(); to avoid displaying the search history on page load? or we do want that?
+    // Do NOT call ; to avoid displaying the search history on page load? or we do want that?
+    
 });
