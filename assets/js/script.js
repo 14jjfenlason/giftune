@@ -136,3 +136,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+//Adding toggle button//
+const toggleButton= document.querySelector('dark-mode-toggle');
+
+toggleButton.addEventListener('click',function(){
+    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
+});
