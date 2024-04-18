@@ -40,6 +40,7 @@ body{
     /* sets margin on search button in modal */
 }
 
+
 /* differnt line heights to show diff size box*/
 .row > .artist-info{
     padding: 10px;
@@ -75,7 +76,7 @@ body{
 
 .row> .gif-container{
     padding: 10px;
-    background-color: #ddd;
+    /*background-color: #ddd;
     /*border: 1px solid #fff;*/
     line-height: 322px;
     margin-top: 13px;
@@ -119,10 +120,3 @@ body{
 
 }
 
-/*Dark mode toggle custom style*/
-.darkmode--activated .darkmode-toggle{
-    background-color: #E6F2FF;
-    color:#004080;
-    
-   
-}
