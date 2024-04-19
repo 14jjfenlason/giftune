@@ -3,6 +3,11 @@
 ## Description
 GifTune is a web application that allows users to search for music artists or songs and receive detailed information alongside related gifs. Utilizing the Spotify and Giphy APIs, it provides a dynamic and interactive way to explore music and visual content. Built with HTML, CSS, and JavaScript, GifTune leverages Materialize CSS for responsive design elements to enhance user experience on various devices.
 
+## Deployed Site
+https://14jjfenlason.github.io/giftune/
+![Deployed website image](https://i.imgur.com/4NpTyl0.png)
+
+
 ## Installation
 To run GifTune locally, follow these simple steps:
 
@@ -95,3 +100,5 @@ This project is released under the MIT License. See the LICENSE file in the proj
 - **Spotify API**: For providing a robust API to access music data.
 - **Giphy API**: For making it easier to add fun and relevant visual content.
 - **Materialize CSS**: For their responsive frontend framework that greatly enhances the UI/UX.
+
+
