@@ -18,7 +18,7 @@ To run GifTune locally, follow these simple steps:
 
 3. **Open the `index.html` file in your web browser.**
 
-No need to install additional dependencies, as the project uses CDN links for all external libraries including Materialize CSS, jQuery, and others.
+No need to install additional dependencies, as the project uses CDN(content delivery network) links for all external libraries including Materialize CSS, jQuery, and others.
 
 ## Usage
 Open `index.html` in your browser. Utilize the search modal to enter an artist's name or song title. The application will fetch and display artist and song information, album art, and a corresponding gif from Giphy related to the search query.
@@ -33,10 +33,16 @@ Open `index.html` in your browser. Utilize the search modal to enter an artist's
 GifTune is developed by a team of student developers from UTA Bootcamp. As part of our learning journey, we have come together to create this application, which demonstrates our collective skills in web development and our passion for music and technology.
 
 ### Our Developers:
-- **Jewel Sunny** - Specializes in frontend development, focusing on UI/UX enhancements using Materialize CSS.
-- **Joshua Fenlason** - Handles backend development, ensuring robust API integration and server-side functionality.
-- **Max Bonetti** - A full stack developer who ensures that the frontend and backend of the application work seamlessly together.
-- **Franc Garcia** - Focuses on quality assurance, responsible for testing and providing critical feedback to improve application reliability and user experience.
+- **Jewel Sunny** - Elevates the visual and interactive elements of the website with her expertise in Materialize CSS, crafting a user interface that is not only visually stunning but also 
+   intuitively navigable. Her meticulous design choices are evident in the elegant arrangement of UI components, enhancing user engagement and satisfaction.
+  
+- **Joshua Fenlason** -Manages the server-side operations, including connecting with APIs like Spotify and Giphy, and ensures seamless functionality of modal interactions and local storage 
+  management. His role is essential for the fetchData() function’s ability to efficiently retrieve and handle data from these external services, as well as for securely storing user data.
+  
+- **Max Bonetti** -Expertly coordinates the front-end and back-end of our application to ensure flawless data integration. He manages user interactions and backend API communications, ensuring smooth data flow from user inputs to external APIs like Spotify and Giphy, and back. His focused efforts enhance overall functionality and user experience.
+  
+- **Franc Garcia** - Oversees API connectivity and local storage management. His work ensures efficient data handling with external services like Spotify and Giphy, as well as reliable storage 
+    of user data. His role is essential in enhancing the application’s performance and user experience.
 
 ## Contributing
 
