@@ -1,4 +1,3 @@
-
 header {
     font-family: "Jersey 10", sans-serif;
     font-weight: 400;
@@ -37,47 +36,34 @@ body{
 } 
 .mb-10 {
     margin-bottom: 10px !important; 
-    /* sets margin on search button in modal */
 }
-
-
-/* differnt line heights to show diff size box*/
 .row > .artist-info{
     padding: 10px;
     background-color: #ddd;
-    /*border: 1px solid #fff;*/
     line-height: 42px;
 }
-
 .row > .song-info {
     padding: 10px;
     background-color: #ddd;
-    /*border: 1px solid #fff;*/
     line-height: 45px;
 }
 .row > footer {
     padding: 10px;
     background-color: #ddd;
-    /*border: 1px solid #fff;*/
     line-height: 60px;
     text-align: center;
 }
-
 .row > .quick-search{
     padding: 10px;
     background-color: #ddd;
     /*border: 1px solid #fff;*/
     margin-top: 20px;
 }
-
 .quick-search{
     margin-top: 20px;
 }
-
 .row> .gif-container{
     padding: 10px;
-    /*background-color: #ddd;
-    /*border: 1px solid #fff;*/
     line-height: 322px;
     margin-top: 13px;
   
@@ -87,23 +73,19 @@ body{
     position: relative;
     height: 300px;
 }
-
 .gif-image{
     width:100%;
     height: 100%;
     display: block;
 }
-
-/* recent changes made*/
 .artist-info{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 423px; /*Adjusted the height to be the same as gif container!!*/
+    height: 423px; 
    
 }
-
 .artist-name-1, 
 .album-title{
     margin-bottom: 10px;
@@ -119,7 +101,6 @@ body{
     align-items: center;
 
 }
-
 .quick-search .card-text{
     background-color: #f0f0f0;
     border: 1px solid #dcdcdc;
@@ -129,7 +110,6 @@ body{
     cursor:pointer;
     transition:background-color 0.3s ease;
 }
-
 .quick-search .card-text:hover{
     background-color: #e0e0e0;
 }
