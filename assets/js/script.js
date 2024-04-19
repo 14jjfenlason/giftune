@@ -1,15 +1,9 @@
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-//~~~~~GLOBAL VARIABLES~~~~~//
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+// Global Variables
 const apiKey = 'd875bf90b3msh5322d0212594c58p18188djsnf6a23b67e4d7';
 const inputEl = document.querySelector(`input[type="search"]`);
 const bandDescEl = document.getElementById(`artist-info`);
 const songPlayerEl = document.getElementById(`song-info`);
 const gifEl = document.getElementById(`gif-container`);
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-// ~~~~~FUNCTIONS~~~~~//
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 //Get Request from Spotify API
 async function fetchData() {
@@ -29,34 +23,31 @@ async function fetchData() {
             }
         });
         const spotifyData = await spotifyResponse.json();
-        console.log('Spotify Data:', spotifyData);
-
+        // Retrieves artist name from Spotify API and displays
         const artistName = spotifyData.artists.items[0].data.profile.name;
         const artistNameDiv = document.querySelectorAll('.artist-name'); 
         artistNameDiv.forEach(div => {
           div.textContent = 'Artist: ' + artistName;
         });
-        
+        // Retrieves album cover photo from Spotify API and displays
         const albumCover = spotifyData.albums.items[0].data.coverArt.sources[0].url;
         const albumCoverImg = document.createElement('img');
         albumCoverImg.src = albumCover;
         const albumCoverDiv = document.querySelector('.album-pic');
         albumCoverDiv.innerHTML = '';
         albumCoverDiv.appendChild(albumCoverImg);
-
+        // Retrieves most popular song name from Spotify API and displays
         const songName = spotifyData.tracks.items[0].data.name;
         const songNameDiv = document.querySelector('.song-name');
         songNameDiv.textContent = 'Song: ' + songName;
-        
+        // Retrieves top GIF from user input from GIPHY API and displays
         const giphyResponse = await fetch(giphyUrl);
         const giphyData = await giphyResponse.json();
-        console.log('Giphy Data:', giphyData);
-
         const gifImage = giphyData.data[0].images.fixed_height.url;
         const gifImg = document.createElement('img');
         gifImg.src = gifImage;
         const gifImageDiv = document.querySelector('.gif-image');
-//style.backgroundImage was added to fill thhe gif container with the gif//
+       
         gifImageDiv.innerHTML = '';
         gifImageDiv.appendChild(gifImg);
 
@@ -133,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
             fetchData();  // Fetch data when pressing Enter in the input field
             const modalInstance = M.Modal.getInstance(document.querySelector('.modal'));
             modalInstance.close();
-           // displaySearches()
         }
     });
 });
