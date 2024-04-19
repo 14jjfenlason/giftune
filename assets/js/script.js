@@ -77,9 +77,8 @@ function displaySearches() {
     let searches = localStorage.getItem('searches');
     searches = searches ? JSON.parse(searches) : [];
     const quickSearchContainer = document.querySelector('.quick-search');
-    // Display only the most recent search term (the last one in the array)
-    const mostRecentSearch = searches[searches.length - 1];
-    quickSearchContainer.innerHTML = mostRecentSearch ? `<p class="card-text">${mostRecentSearch}</p>` : '';
+    quickSearchContainer.innerHTML = ''; // Clear previous content
+    
     searches.forEach(search => {
         const searchElement = document.createElement('p');
         searchElement.className = 'card-text';
